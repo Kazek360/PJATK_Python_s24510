@@ -1,0 +1,30 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+print('Kalkulator')
+
+print('Wprowadź liczbę A')
+liczbaA = int(input())
+
+print('Wprowadź liczbę B')
+liczbaB = int(input())
+
+print("Wybierz opcje: \n" +
+      "1. Dodawanie \n" +
+      "2. Odejmowanie\n" +
+      "3. Mnożenie \n" +
+      "4. Dzielenie")
+
+opcja = int(input())
+
+print("Wynik: ")
+
+if opcja == 1:
+    print(liczbaA+liczbaB)
+elif opcja == 2:
+    print(liczbaA - liczbaB)
+elif opcja == 3:
+    print(liczbaA*liczbaB)
+elif opcja == 4:
+    print(liczbaA/liczbaB)
+else:
+    print("Nie wybrano prawidłowej opcji")
