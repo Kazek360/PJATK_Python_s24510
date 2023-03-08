@@ -1,0 +1,18 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+print('Kartoteka')
+
+print("Podaj dane \n" +
+      "Wiek:")
+wiek = int(input())
+
+print("Wzrost:")
+wzrost = int(input())
+
+print("Kolor oczu:")
+oczy = str(input())
+
+print("Kolor włosów:")
+wlosy = str(input())
+
+print(str(wiek) + " " + str(wzrost) + " " + oczy + " " + wlosy)
