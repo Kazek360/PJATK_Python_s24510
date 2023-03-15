@@ -1,0 +1,24 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+import math
+
+print('Delta')
+
+print('''Podaj liczby
+A:''')
+A = int(input())
+print("B:")
+B = int(input())
+print("C:")
+C = int(input())
+
+# rownanie = "{0}x^2 + {1}x + {2}".format(A,B,C)
+# print(rownanie)
+
+delta = ((B**2)-(4*A*C))
+print(delta)
+
+if delta < 0:
+    print("Delta mniejsza od 0")
+else:
+    print("Delta większa od 0")
