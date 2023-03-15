@@ -1,0 +1,18 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+#Napisz skrypt, który pobierze od użytkownika 3 liczby.
+# Pierwsza liczba powinna być podana w systemie dwójkowym, druga w systemie ósemkowym,
+# a ostania w systemie szesnastkowym.
+# Skrypt powinien przekonwertować podane 3 liczby na system dziesiętny i wypisać je.
+
+print('Delta')
+
+print('''Podaj liczby
+Liczba 1 w systemie dwójkowym:''')
+A = bin(int(input()))
+print("Liczba 2 w systemie ósemkowym:")
+B = oct(int(input()))
+print("Liczba 3 w systemie szesnastkowym:")
+C = hex(int(input()))
+
+print(A,B,C)
