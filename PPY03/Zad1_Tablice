@@ -1,0 +1,21 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+print('''Imie:''')
+name = str(input())
+
+print('''Data urodzenia:''')
+date = str(input())
+
+print('''Email:''')
+email = str(input())
+
+print('''Numer telefonu:''')
+phoneNum = str(input())
+
+tab = [name, date, email, phoneNum]
+krotka = name, date, email, phoneNum
+slownik = (("Imię", name), ("Data urodzenia", date), ("Email", email), ("Numer telefonu", phoneNum))
+
+print(tab)
+print(krotka)
+print(slownik)
