@@ -1,0 +1,53 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+tab = []
+
+print("Podaj 20 liczb z przedziału (-20,20)")
+
+while len(tab) != 20:
+    try:
+        x = int(input())
+        if x in range(-21, 21):
+            tab.append(x)
+        else:
+            print("Numier nie jest w przedziale")
+    except:
+        print("To nie jest liczba")
+print(tab)
+
+#1. utwórz kopię listy
+copyTab = tab.copy()
+
+
+#2. wyszukaj liczby pierwsze i utwórz z nich krotkę
+
+liczbyPierwsze = []
+for x in tab:
+    if x > 1:
+        czy_pierwsza = True
+        for i in range(2, int(x ** 0.5) +1):
+            if x % i == 0:
+                czy_pierwsza = False
+        if czy_pierwsza:
+            liczbyPierwsze.append(x)
+
+liczbyPierwsze.sort()
+liczbyPierwszeAleToStoKrotka = tuple(liczbyPierwsze)
+print(liczbyPierwszeAleToStoKrotka)
+
+#3. podnieś do potęgi 2 liczby podzielne przez 2 i utwórz z nich krotkę
+powOfTwo = []
+
+for x in tab:
+    if x % 2 == 0:
+        powOfTwo.append(x**2)
+
+powOfTwo.sort()
+powOfTwoButItsKrotka = tuple(powOfTwo)
+print(powOfTwoButItsKrotka)
+
+#4. z pierwotnej listy wyszukaj liczby podzielne przez 2 i zamień je na literę A.
+tab = ['A' if x % 2 == 0 else x for x in tab]
+
+tab.sort()
+print(tab)
