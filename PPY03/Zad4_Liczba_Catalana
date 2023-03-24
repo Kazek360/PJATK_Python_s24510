@@ -1,0 +1,19 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+print("Podaj górną granicę:")
+rozmiar = int(input())
+
+n = 1
+c0 = 1
+c1 = 1
+
+print(c0)
+print(c1)
+
+cn = 0
+while cn < rozmiar:
+    cn = 4 * (n - 1) + 2 // (n + 1) * c1
+    print(cn)
+    c0 = c1
+    c1 = cn
+    n += 1
