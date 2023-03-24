@@ -1,0 +1,14 @@
+
+#Kazimierz Piontek s24510 grupa 23c
+
+print("Podaj rozmiar tabliczki mnożenia:")
+rozmiar = int(input())
+
+
+for i in range(1, rozmiar+1):
+    lista = []
+    for j in range(1,6):
+        wynik = i*j
+        lista.append(wynik)
+    formatted_list = [f"{num:4d}" for num in lista]
+    print(" ".join(formatted_list))
