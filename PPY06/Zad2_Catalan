@@ -1,0 +1,30 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+def catalan_numbers(N, p=False, n=False, a=True):
+    tab = []
+    print(1)
+
+    c0, c1 = 1, 1
+    liczba = 1
+    cn = 0
+
+    while cn < N:
+        cn = 4 * (liczba - 1) + 2 // (liczba + 1) * c1
+
+        if p and cn % 2 == 0 and (not n or (n and cn % 2 == 1)):
+            tab.append(cn)
+        elif n and cn % 2 == 1 and (not p or (p and cn % 2 == 0)):
+            tab.append(cn)
+        elif a and not p and not n:
+            tab.append(cn)
+
+        c0, c1 = c1, cn
+        liczba += 1
+
+    return tab
+
+
+print("Podaj górną granicę:")
+rozmiar = int(input())
+
+print(catalan_numbers(rozmiar, p=True, n=False, a=False))
