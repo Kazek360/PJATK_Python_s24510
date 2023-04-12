@@ -1,0 +1,12 @@
+def perfectDigit(*args):
+    y = [6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128]
+    slownik = {}
+    for r in args:
+        b = False
+        for x in y:
+            if r == x:
+                b = True
+        slownik[r] = b
+    return slownik
+
+print(perfectDigit(1, 2, 3, 6, 27, 28))
