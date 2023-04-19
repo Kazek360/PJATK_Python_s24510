@@ -1,0 +1,29 @@
+import datetime
+
+
+class Osoba:
+    osoby = []
+
+    def __init__(self, imie: str, nazwisko: str, plec: str, dataUr: datetime):
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.plec = plec
+        self.dataUr = dataUr
+        self.__class__.osoby.append(self)
+
+    def wyswietl_info(self):
+        print(f"{self.imie}, {self.nazwisko}, {self.plec}, {self.dataUr.strftime('%Y-%m-%d')}")
+
+    @classmethod
+    def wyswietl_osoby(cls):
+        for osoba in cls.osoby:
+            osoba.wyswietl_info()
+
+
+
+os1 = Osoba("Jan", "Kowalski", "M", datetime.datetime(2002,7,7))
+os1 = Osoba("Jan", "Nowak", "M", datetime.datetime(2003,7,27))
+os1 = Osoba("Jan", "Piątek", "M", datetime.datetime(2004,7,17))
+os1.wyswietl_info()
+
+Osoba.wyswietl_osoby()
