@@ -1,0 +1,16 @@
+def liczbyPodzielne(N: int, ascending: bool):
+    tab =  []
+
+    for i in range(N):
+        if i % 2 == 0 and i % 3 != 0:
+            tab.append(i)
+
+    if ascending:
+        print(tab)
+    else:
+        tab.reverse()
+        print(tab)
+
+
+liczbyPodzielne(100, False)
+liczbyPodzielne(100, True)
