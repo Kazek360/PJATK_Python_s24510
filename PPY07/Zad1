@@ -7,11 +7,22 @@ class Produkt:
         self.__class__.produkty.append(self)
 
     @classmethod
+    def delProduct(cls, nazwa: str):
+        for p in cls.produkty:
+            if p.nazwa == nazwa:
+                cls.produkty.remove(p)
+    @classmethod
     def writeAllProducts(cls):
         for p in cls.produkty:
             print(f"{p.nazwa}, {p.waga}")
 
 pr1 = Produkt("Jabłko", 0.2)
 pr2 = Produkt("Gruszka", 0.3)
+pr3 = Produkt("Banany", 0.5)
+pr4 = Produkt("Pomarańcze", 0.4)
+pr5 = Produkt("Kiwi", 0.1)
 
+Produkt.writeAllProducts()
+Produkt.delProduct("Banany")
+print("---")
 Produkt.writeAllProducts()
