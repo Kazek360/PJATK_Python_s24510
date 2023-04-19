@@ -1,6 +1,5 @@
 import datetime
-
-
+from enum import Enum
 class Osoba:
     osoby = []
 
@@ -11,19 +10,69 @@ class Osoba:
         self.dataUr = dataUr
         self.__class__.osoby.append(self)
 
-    def wyswietl_info(self):
-        print(f"{self.imie}, {self.nazwisko}, {self.plec}, {self.dataUr.strftime('%Y-%m-%d')}")
+    def wyswietl_info(self, typ="krotka"):
+        if typ == "lista":
+            return [self.imie, self.nazwisko, self.plec, self.dataUr.strftime('%Y-%m-%d')]
+        elif typ == "slownik":
+            return {
+                'imie': self.imie,
+                'nazwisko': self.nazwisko,
+                'plec': self.plec,
+                'data_ur': self.dataUr.strftime('%Y-%m-%d')
+            }
+        else:
+            return (self.imie, self.nazwisko, self.plec, self.dataUr.strftime('%Y-%m-%d'))
 
     @classmethod
     def wyswietl_osoby(cls):
+        osobyLista = []
         for osoba in cls.osoby:
-            osoba.wyswietl_info()
+            osobyLista.append({"Osoba" + str(cls.osoby.index(osoba) + 1): osoba.wyswietl_info("slownik")})
+        return osobyLista
 
+class Typ(Enum):
+    NPC = 1
+    Human = 2
 
+class Gracz(Osoba):
+    gracze = []
 
-os1 = Osoba("Jan", "Kowalski", "M", datetime.datetime(2002,7,7))
-os1 = Osoba("Jan", "Nowak", "M", datetime.datetime(2003,7,27))
-os1 = Osoba("Jan", "Piątek", "M", datetime.datetime(2004,7,17))
-os1.wyswietl_info()
+    def __init__(self, nick: str, typ: Typ, email: str, osoba: Osoba):
+        self.nick = nick
+        self.typ = Typ
+        self.email = email
+        self.osoba = osoba
+        self.__class__.gracze.append(self)
 
-Osoba.wyswietl_osoby()
+    def wyswietl_info(self, typ="krotka"):
+        if typ == "lista":
+            return [self.nick, self.typ, self.email, self.osoba.wyswietl_info("lista")]
+        elif typ == "slownik":
+            return {
+                'nick': self.nick,
+                'typ': self.typ,
+                'email': self.email,
+                'osoba': self.osoba.wyswietl_info("slownik")
+            }
+        else:
+            return (self.nick, self.typ, self.email, self.osoba.wyswietl_info("krotka"))
+    @classmethod
+    def wyswietl_graczy(cls):
+        graczeLista = []
+        for gracz in cls.gracze:
+            graczeLista.append({"Gracz" + str(cls.gracze.index(gracz) + 1): gracz.wyswietl_info("slownik")})
+        return graczeLista
+
+os1 = Osoba("Jan", "Kowalski", "M", datetime.datetime(2002, 7, 7))
+os2 = Osoba("Jan", "Nowak", "M", datetime.datetime(2003, 7, 27))
+os3 = Osoba("Jan", "Piątek", "M", datetime.datetime(2004, 7, 17))
+g1 = Gracz("GejMer", Typ.Human, "cos@cos.cos", os1)
+
+print(g1.wyswietl_info("lista"))
+
+print(os1.wyswietl_info("lista"))
+print(os1.wyswietl_info("slownik"))
+print(os1.wyswietl_info("krotka"))
+
+print(Osoba.wyswietl_osoby())
+print(Gracz.wyswietl_graczy())
