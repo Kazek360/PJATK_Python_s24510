@@ -1,0 +1,17 @@
+class Produkt:
+    produkty = []
+
+    def __init__(self, nazwa, waga):
+        self.nazwa = nazwa
+        self.waga = waga
+        self.__class__.produkty.append(self)
+
+    @classmethod
+    def writeAllProducts(cls):
+        for p in cls.produkty:
+            print(f"{p.nazwa}, {p.waga}")
+
+pr1 = Produkt("Jabłko", 0.2)
+pr2 = Produkt("Gruszka", 0.3)
+
+Produkt.writeAllProducts()
