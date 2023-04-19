@@ -1,4 +1,5 @@
-def generatorLiczbPierwszych(limit=75):
+def generatorLiczbPierwszych():
+    limit=75
     liczbyPierwsze = []
     n = 2
     while len(liczbyPierwsze) < limit:
