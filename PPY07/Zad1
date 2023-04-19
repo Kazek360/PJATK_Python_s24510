@@ -1,7 +1,7 @@
 class Produkt:
     produkty = []
 
-    def __init__(self, nazwa, waga):
+    def __init__(self, nazwa: str, waga: float):
         self.nazwa = nazwa
         self.waga = waga
         self.__class__.produkty.append(self)
