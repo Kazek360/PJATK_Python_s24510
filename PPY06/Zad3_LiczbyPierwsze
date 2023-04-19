@@ -1,0 +1,16 @@
+def generatorLiczbPierwszych(limit=75):
+    liczbyPierwsze = []
+    n = 2
+    while len(liczbyPierwsze) < limit:
+        czyPierwsza = True
+        for p in liczbyPierwsze:
+            if n % p == 0:
+                czyPierwsza = False
+                break
+        if czyPierwsza:
+            liczbyPierwsze.append(n)
+            yield n
+        n += 1
+
+for prime in generatorLiczbPierwszych():
+    print(prime)
