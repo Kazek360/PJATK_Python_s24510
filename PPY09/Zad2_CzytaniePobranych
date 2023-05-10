@@ -1,0 +1,12 @@
+import os
+
+path = "C:/Users/s24510/Downloads"
+
+print(path)
+
+for file in os.listdir(path):
+    file_path = os.path.join(path, file)
+    if os.path.isfile(file_path):
+        print(f"{file} to plik")
+    elif os.path.isdir(file_path):
+        print(f"{file} to folder")
