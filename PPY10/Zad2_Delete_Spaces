@@ -1,0 +1,6 @@
+import re
+
+text = 'Programowanie w języku Python – od A do Z'
+new_text = re.sub(r"\s+",'', text)
+
+print(new_text)
