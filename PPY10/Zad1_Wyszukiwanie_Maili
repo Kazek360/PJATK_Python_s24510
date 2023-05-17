@@ -1,0 +1,5 @@
+import re
+
+raw_text = 'Wyślij email na adres: info@template.com lub sales-info@template.it'
+emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", raw_text)
+print(emails)
