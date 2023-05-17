@@ -1,0 +1,17 @@
+def milesToKilometers(miles):
+    return miles * 1.609
+
+def feetToMeters(feet):
+    return feet * 0.3048
+
+def degreesToRadians(degrees):
+    return degrees * (3.1416 / 180)
+
+def kilometersToMiles(km):
+    return km / 1.609
+
+def metersToFeets(m):
+    return m / 0.3048
+
+def radiansToDegrees(rad):
+    return rad * (180 / 3.1416)
