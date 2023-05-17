@@ -1,0 +1,4 @@
+text = 'Programowanie w języku Python – od A do Z'
+
+print(text.lower())
+print(text.upper())
