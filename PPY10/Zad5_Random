@@ -1,0 +1,7 @@
+import random
+
+random.seed(12)
+items = ['python', 'java', 'sql', 'c++', 'c']
+rn = random.randint(0, len(items)-1)
+
+print(items.pop(rn))
