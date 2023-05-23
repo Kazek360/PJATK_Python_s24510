@@ -1,0 +1,15 @@
+#Kazimierz Piontek s24510 grupa 23c
+
+def signum(x):
+    if x > 0:
+        return 1
+    elif x < 0:
+        return -1
+    else:
+        return 0
+
+print("Wprowadź x:")
+x = float(input())
+
+print("Wynik:")
+print(signum(x))
