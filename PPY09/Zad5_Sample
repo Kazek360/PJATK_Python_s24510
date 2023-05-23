@@ -1,0 +1,8 @@
+#Kazimierz Piontek s24510
+
+import random
+from string import ascii_letters
+
+five_letters = random.sample(ascii_letters, 5)
+
+print(five_letters)
