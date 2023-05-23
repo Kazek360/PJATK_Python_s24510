@@ -1,0 +1,34 @@
+#Kazimierz Piontek s24510 grupa 23c
+import Kalkulator
+print('Kalkulator')
+
+print('Wprowadź liczbę A')
+liczbaA = int(input())
+
+liczbaB = 0
+while liczbaB <= 0:
+    print('Wprowadź liczbę B (musi być większa od 0)')
+    liczbaB = int(input())
+    if liczbaB <= 0:
+        print("Nieprawidłowa liczba B. Musi być większa od 0.")
+
+print("Wybierz opcje: \n" +
+      "1. Dodawanie \n" +
+      "2. Odejmowanie\n" +
+      "3. Mnożenie \n" +
+      "4. Dzielenie")
+
+opcja = int(input())
+
+print("Wynik: ")
+
+if opcja == 1:
+    print(Kalkulator.dodawanie(liczbaA,liczbaB))
+elif opcja == 2:
+    print(Kalkulator.odejmowanie(liczbaA,liczbaB))
+elif opcja == 3:
+    print(Kalkulator.mnozenie(liczbaA,liczbaB))
+elif opcja == 4:
+    print(Kalkulator.dzielenie(liczbaA,liczbaB))
+else:
+    print("Nie wybrano prawidłowej opcji")
