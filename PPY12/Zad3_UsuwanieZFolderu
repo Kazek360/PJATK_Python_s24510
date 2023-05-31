@@ -1,0 +1,23 @@
+import os
+import time
+
+
+def main():
+    folder_path = input("Podaj ścieżkę do folderu w którym nastąpi eksterminacja danych: ")
+
+    current_time = time.time()
+
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+
+        if (
+                os.path.isfile(file_path) and
+                (current_time - os.path.getmtime(file_path)) > 31536000 and
+                os.path.getsize(file_path) > 1048576
+        ):
+            os.remove(file_path)
+            print(f"Usunięto plik: {filename}")
+
+
+if __name__ == "__main__":
+    main()
