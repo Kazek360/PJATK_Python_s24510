@@ -1,0 +1,24 @@
+import os.path
+
+
+def main():
+    input_path = input("Podaj ścieżkę do pliku wejściowego: ")
+
+    output_path = input("Podaj ścieżkę do pliku wyjściowego: ")
+
+    with open(input_path, 'r') as input_file:
+        lines = input_file.readlines()
+
+    num_lines = len(lines)
+
+    print(f"Liczba linii: {num_lines}")
+    output_file_name = os.path.basename(output_path)
+
+
+    with open(output_path, 'w') as output_file:
+        output_file.write(f"Nazwa pliku: {output_file_name}\n")
+        output_file.write(f"Liczba linii: {num_lines}\n")
+
+
+if __name__ == "__main__":
+    main()
