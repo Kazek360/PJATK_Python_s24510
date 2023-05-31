@@ -1,0 +1,26 @@
+class DaneOsobowe:
+    def __init__(self):
+        self.imie = None
+        self.nazwisko = None
+
+    def zapisz_dane_do_pliku(self):
+        self.imie = input("Podaj imię: ")
+        self.nazwisko = input("Podaj nazwisko: ")
+
+        with open("test.txt", "w", encoding="utf-8") as file:
+            file.write(f"Imię: {self.imie}\n")
+            file.write(f"Nazwisko: {self.nazwisko}\n")
+
+    def czytaj_dane_z_pliku(self):
+        with open("test.txt", "r", encoding="utf-8") as file:
+            dane = file.readlines()
+
+        for linia in dane:
+            print(linia.strip())
+
+if __name__ == "__main__":
+    dane_osobowe = DaneOsobowe()
+    dane_osobowe.zapisz_dane_do_pliku()
+    print("Dane zostały zapisane do pliku test.txt.")
+    print("Odczytane dane:")
+    dane_osobowe.czytaj_dane_z_pliku()
